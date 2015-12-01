@@ -67,12 +67,12 @@ function msg_valid(msg)
 
   if not msg.from.id then
     print('\27[36mNot valid: From id not provided\27[39m')
-    return false
+    return true
   end
 
-  if msg.from.id == our_id then
+  if msg.from.id == 51718050 then
     print('\27[36mNot valid: Msg from our id\27[39m')
-    return false
+    return true
   end
 
   if msg.to.type == 'encr_chat' then
@@ -228,7 +228,7 @@ function create_config( )
       "weather",
       "xkcd",
       "youtube" },
-    sudo_users = {our_id},
+    sudo_users = {51718050},
     disabled_channels = {}
   }
   serialize_to_file(config, './data/config.lua')
